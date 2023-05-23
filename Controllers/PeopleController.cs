@@ -139,7 +139,7 @@ namespace Labb_3.Controllers
         // GET: People
         public async Task<IActionResult> Index()
         {
-            return _context.Persons != null ?
+              return _context.Persons != null ? 
                 View(await _context.Persons.Include(p => p.PersonInterests).ThenInclude(pi => pi.Interest).ToListAsync()) :
                 Problem("Entity set 'InitialDbContext.Persons' is null.");
         }
